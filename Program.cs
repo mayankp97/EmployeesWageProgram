@@ -19,6 +19,14 @@ namespace EmployeesWageProgram
                 var dailyEmployeeWage = wagePerHour * fullDayHour;
                 Console.WriteLine("Daily Employee Wage is {0}", dailyEmployeeWage);
             }
+            if (UseCase == 3)
+            {
+                Console.Write("Enter Part Time Wage Per Hour : ");
+                var partTimeWagePerHour = Convert.ToInt32(Console.ReadLine());
+                var partTimeHour = 8;
+                var partTimeWage = partTimeWagePerHour * partTimeHour;
+                Console.WriteLine("Part Time Wage is {0}", partTimeWage);
+            }
         }
     }
 }
