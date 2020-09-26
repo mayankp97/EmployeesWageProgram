@@ -12,6 +12,7 @@ namespace EmployeesWageProgram
             var wagePerHour = 20;
             var fullDayHour = 8;
             var workingDays = 20;
+            var numberOfHours = 100;
             switch (UseCase)
             {
                 case 1:
@@ -33,6 +34,10 @@ namespace EmployeesWageProgram
                     dailyEmployeeWage = wagePerHour * fullDayHour;
                     var monthlyWage = dailyEmployeeWage * workingDays;
                     Console.WriteLine("Monthly Wage is {0}", monthlyWage);
+                    break;
+                case 5:
+                    var modifiedMonthlyWage = wagePerHour * numberOfHours;
+                    Console.WriteLine("Modified Monthly Wage is : {0}", modifiedMonthlyWage);
                     break;
             }
             Console.ReadLine();
