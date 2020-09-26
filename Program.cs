@@ -11,6 +11,7 @@ namespace EmployeesWageProgram
             var UseCase = Convert.ToInt32(Console.ReadLine());
             var wagePerHour = 20;
             var fullDayHour = 8;
+            var workingDays = 20;
             switch (UseCase)
             {
                 case 1:
@@ -27,7 +28,12 @@ namespace EmployeesWageProgram
                     var partTimeHour = 8;
                     var partTimeWage = partTimeWagePerHour * partTimeHour;
                     Console.WriteLine("Part Time Wage is {0}", partTimeWage);
-                    break; 
+                    break;
+                case 4:
+                    dailyEmployeeWage = wagePerHour * fullDayHour;
+                    var monthlyWage = dailyEmployeeWage * workingDays;
+                    Console.WriteLine("Monthly Wage is {0}", monthlyWage);
+                    break;
             }
             Console.ReadLine();
         }
