@@ -13,6 +13,10 @@ namespace EmployeesWageProgram
 
         static void Main(string[] args)
         {
+            CalculateMonthlyWage();
+        }
+        public static void CalculateMonthlyWage()
+        {
             Console.WriteLine("Welcome Employee");
 
             var wageHour = 0;
@@ -38,7 +42,7 @@ namespace EmployeesWageProgram
                 totalHours += wageHour;
             }
             monthlyWage = totalHours * Wage_Per_Hour;
-            Console.WriteLine("Employee's monthly Wage is : " + dailyWage);
+            Console.WriteLine("Employee's monthly Wage is : " + monthlyWage);
         }
     }
 }
