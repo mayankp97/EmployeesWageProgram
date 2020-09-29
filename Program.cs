@@ -9,6 +9,7 @@ namespace EmployeesWageProgram
             Console.WriteLine("Welcome Employee");
 
             var UseCase = Convert.ToInt32(Console.ReadLine());
+            var isPartTime = true;
             if (UseCase == 1)
                 Console.WriteLine(new Random().Next(0, 2) == 1 ? "Present" : "Absent");
             Console.ReadLine();
@@ -21,11 +22,15 @@ namespace EmployeesWageProgram
             }
             if (UseCase == 3)
             {
-                Console.Write("Enter Part Time Wage Per Hour : ");
-                var partTimeWagePerHour = Convert.ToInt32(Console.ReadLine());
-                var partTimeHour = 8;
-                var partTimeWage = partTimeWagePerHour * partTimeHour;
-                Console.WriteLine("Part Time Wage is {0}", partTimeWage);
+                if(isPartTime==true){
+                    Console.Write("Enter Part Time Wage Per Hour : ");
+                    var partTimeWagePerHour = Convert.ToInt32(Console.ReadLine());
+                    var partTimeHour = 8;
+                    var partTimeWage = partTimeWagePerHour * partTimeHour;
+                    Console.WriteLine("Part Time Wage is {0}", partTimeWage);
+                }
+                else
+                    Console.WriteLine("Employee is not Part time", partTimeWage);
             }
         }
     }
