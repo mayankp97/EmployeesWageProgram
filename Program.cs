@@ -4,43 +4,41 @@ namespace EmployeesWageProgram
 {
     class Program
     {
+
+        public const int IS_Part_Time = 1;
+        public const int IS_Full_Time = 2;
+        public const int Wage_Per_Hour = 20;
+        public const int Working_Days = 20;
+        public const int Max_Hours_Per_Month = 100;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome Employee");
 
-            var UseCase = Convert.ToInt32(Console.ReadLine());
-            var wagePerHour = 20;
-            var fullDayHour = 8;
-            var workingDays = 20;
-            var numberOfHours = 100;
-            switch (UseCase)
+            var wageHour = 0;
+            var monthlyWage = 0;
+            var totalHours = 0;
+            var totalWorkingDays = 0;
+            while (totalHours <= Max_Hours_Per_Month && totalWorkingDays <= Working_Days)
             {
-                case 1:
-                    Console.WriteLine(new Random().Next(0, 2) == 1 ? "Present" : "Absent");
-                    break;
-                case 2:
-
-                    var dailyEmployeeWage = wagePerHour * fullDayHour;
-                    Console.WriteLine("Daily Employee Wage is {0}", dailyEmployeeWage);
-                    break;
-                case 3:
-                    Console.Write("Enter Part Time Wage Per Hour : ");
-                    var partTimeWagePerHour = Convert.ToInt32(Console.ReadLine());
-                    var partTimeHour = 8;
-                    var partTimeWage = partTimeWagePerHour * partTimeHour;
-                    Console.WriteLine("Part Time Wage is {0}", partTimeWage);
-                    break;
-                case 4:
-                    dailyEmployeeWage = wagePerHour * fullDayHour;
-                    var monthlyWage = dailyEmployeeWage * workingDays;
-                    Console.WriteLine("Monthly Wage is {0}", monthlyWage);
-                    break;
-                case 5:
-                    var modifiedMonthlyWage = wagePerHour * numberOfHours;
-                    Console.WriteLine("Modified Monthly Wage is : {0}", modifiedMonthlyWage);
-                    break;
+                totalWorkingDays++;
+                var empCheck = new Random().Next(0, 3);
+                switch (empCheck)
+                {
+                    case IS_Part_Time:
+                        wageHour = 4;
+                        break;
+                    case IS_Full_Time:
+                        wageHour = 8;
+                        break;
+                    default:
+                        wageHour = 0;
+                        break;
+                }
+                totalHours += wageHour;
             }
-            Console.ReadLine();
+            monthlyWage = totalHours * Wage_Per_Hour;
+            Console.WriteLine("Employee's monthly Wage is : " + dailyWage);
         }
     }
 }
