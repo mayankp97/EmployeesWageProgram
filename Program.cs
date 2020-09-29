@@ -8,17 +8,17 @@ namespace EmployeesWageProgram
         {
             Console.WriteLine("Welcome Employee");
 
-            var UseCase = Convert.ToInt32(Console.ReadLine());
-            if (UseCase == 1)
-                Console.WriteLine(new Random().Next(0, 2) == 1 ? "Present" : "Absent");
-            Console.ReadLine();
-            if (UseCase == 2)
-            {
-                var wagePerHour = 20;
-                var fullDayHour = 8;
-                var dailyEmployeeWage = wagePerHour * fullDayHour;
-                Console.WriteLine("Daily Employee Wage is {0}", dailyEmployeeWage);
-            }
+            const int wagePerHour = 20;
+            const int wageHour = 8;
+
+            var isPresent = new Random().Next(0, 2) == 1;
+
+            var dailyWage = 0;
+            if (isPresent == true)
+                dailyWage = wagePerHour * wageHour;
+
+
+
         }
     }
 }
