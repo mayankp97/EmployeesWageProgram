@@ -4,32 +4,32 @@ namespace EmployeesWageProgram
 {
     class Program
     {
+
+        public const int IS_Part_Time = 1;
+        public const int IS_Full_Time = 2;
+        public const int Wage_Per_Hour = 20;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome Employee");
 
-            var UseCase = Convert.ToInt32(Console.ReadLine());
-            var wagePerHour = 20;
-            var fullDayHour = 8;
-            switch (UseCase)
-            {
-                case 1:
-                    Console.WriteLine(new Random().Next(0, 2) == 1 ? "Present" : "Absent");
-                    break;
-                case 2:
+            int wageHour = 0;
 
-                    var dailyEmployeeWage = wagePerHour * fullDayHour;
-                    Console.WriteLine("Daily Employee Wage is {0}", dailyEmployeeWage);
+            var empCheck = new Random().Next(0, 3);
+            switch (empCheck)
+            {
+                case IS_Part_Time:
+                    wageHour = 4;
                     break;
-                case 3:
-                    Console.Write("Enter Part Time Wage Per Hour : ");
-                    var partTimeWagePerHour = Convert.ToInt32(Console.ReadLine());
-                    var partTimeHour = 8;
-                    var partTimeWage = partTimeWagePerHour * partTimeHour;
-                    Console.WriteLine("Part Time Wage is {0}", partTimeWage);
-                    break; 
+                case IS_Full_Time:
+                    wageHour = 8;
+                    break;
+                default:
+                    wageHour = 0;
+                    break;
             }
-            Console.ReadLine();
+            var dailyWage = wageHour * Wage_Per_Hour;
+            Console.WriteLine("Employee's daily Wage is : " + dailyWage);
         }
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\Mayank\source\repos\EmployeesWageProgram\bin\Debug\netcoreapp3.1\EmployeesWageProgram.exe
+C:\Users\Mayank\source\repos\EmployeesWageProgram\bin\Debug\netcoreapp3.1\EmployeesWageProgram.deps.json
+C:\Users\Mayank\source\repos\EmployeesWageProgram\bin\Debug\netcoreapp3.1\EmployeesWageProgram.runtimeconfig.json
+C:\Users\Mayank\source\repos\EmployeesWageProgram\bin\Debug\netcoreapp3.1\EmployeesWageProgram.runtimeconfig.dev.json
+C:\Users\Mayank\source\repos\EmployeesWageProgram\bin\Debug\netcoreapp3.1\EmployeesWageProgram.dll
+C:\Users\Mayank\source\repos\EmployeesWageProgram\bin\Debug\netcoreapp3.1\EmployeesWageProgram.pdb
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.csprojAssemblyReference.cache
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.AssemblyInfoInputs.cache
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.AssemblyInfo.cs
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.csproj.CoreCompileInputs.cache
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.dll
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.pdb
+C:\Users\Mayank\source\repos\EmployeesWageProgram\obj\Debug\netcoreapp3.1\EmployeesWageProgram.genruntimeconfig.cache
