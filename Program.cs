@@ -7,15 +7,15 @@ namespace EmployeesWageProgram
 
         public const int IS_Part_Time = 1;
         public const int IS_Full_Time = 2;
-        public const int Wage_Per_Hour = 20;
-        public const int Working_Days = 20;
-        public const int Max_Hours_Per_Month = 100;
+        
 
         static void Main(string[] args)
         {
-            CalculateMonthlyWage();
+            CalculateMonthlyWage("Walmart",20,25,140);
+            CalculateMonthlyWage("Dtech", 42, 20, 100);
+
         }
-        public static void CalculateMonthlyWage()
+        public static void CalculateMonthlyWage(string companyName, int wagePerHour, int workingDays, int maxHoursPerMonth)
         {
             Console.WriteLine("Welcome Employee");
 
@@ -23,7 +23,7 @@ namespace EmployeesWageProgram
             var monthlyWage = 0;
             var totalHours = 0;
             var totalWorkingDays = 0;
-            while (totalHours <= Max_Hours_Per_Month && totalWorkingDays <= Working_Days)
+            while (totalHours <= maxHoursPerMonth && totalWorkingDays <= workingDays)
             {
                 totalWorkingDays++;
                 var empCheck = new Random().Next(0, 3);
@@ -41,8 +41,8 @@ namespace EmployeesWageProgram
                 }
                 totalHours += wageHour;
             }
-            monthlyWage = totalHours * Wage_Per_Hour;
-            Console.WriteLine("Employee's monthly Wage is : " + monthlyWage);
+            monthlyWage = totalHours * wagePerHour;
+            Console.WriteLine("Employee's monthly Wage for {0} is : {1}",companyName,monthlyWage);
         }
     }
 }
