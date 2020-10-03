@@ -10,6 +10,7 @@ namespace EmployeesWageProgram
         public int wagePerHour;
         public int workingDays;
         public int maxHoursPerMonth;
+        public List<int> DailyWage;
         public int totalEmployeeWage;
 
         public CompanyEmployeeWage(string companyName, int wagePerHour, int workingDays, int maxHoursPerMonth)
@@ -18,6 +19,7 @@ namespace EmployeesWageProgram
             this.wagePerHour = wagePerHour;
             this.workingDays = workingDays;
             this.maxHoursPerMonth = maxHoursPerMonth;
+            this.DailyWage = new List<int>();
         }
         public override string ToString()
         {

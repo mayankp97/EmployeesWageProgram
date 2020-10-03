@@ -37,8 +37,6 @@ namespace EmployeesWageProgram
         }
         public void CalculateMonthlyWage(CompanyEmployeeWage companyEmployeeWage)
         {
-
-
             var wageHour = 0;
             var totalHours = 0;
             var totalWorkingDays = 0;
@@ -60,6 +58,8 @@ namespace EmployeesWageProgram
                         break;
                 }
                 totalHours += wageHour;
+                var dailywage = wageHour * companyEmployeeWage.wagePerHour;
+                companyEmployeeWage.DailyWage.Add(dailywage);
             }
             totalEmployeeWage = totalHours * companyEmployeeWage.wagePerHour;
             companyEmployeeWage.totalEmployeeWage = totalEmployeeWage;
