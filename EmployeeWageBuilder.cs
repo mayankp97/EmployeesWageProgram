@@ -9,28 +9,38 @@ namespace EmployeesWageProgram
         public const int IS_Part_Time = 1;
         public const int IS_Full_Time = 2;
 
-        private string _companyName;
-        private int _wagePerHour;
-        private int _workingDays;
-        private int _maxHoursPerMonth;
-        private int _totalEmployeeWage;
+        private int _numberOfCompanies = 0;
+        public CompanyEmployeeWage[] companyWageArray;
+        
 
-        public EmployeeWageBuilder(string companyName, int wagePerHour, int workingDays, int maxHoursPerMonth)
+        public EmployeeWageBuilder()
         {
-            _companyName = companyName;
-            _wagePerHour = wagePerHour;
-            _workingDays = workingDays;
-            _maxHoursPerMonth = maxHoursPerMonth;
-
+            this.companyWageArray = new CompanyEmployeeWage[5];
         }
-        public void CalculateMonthlyWage()
+
+        public void AddWageDetails(string companyName, int wagePerHour, int workingDays, int maxHoursPerMonth)
         {
-            Console.WriteLine("Welcome Employee");
+            this.companyWageArray[_numberOfCompanies] = new CompanyEmployeeWage(companyName, wagePerHour, workingDays, maxHoursPerMonth);
+            _numberOfCompanies++;
+        }
+
+        public void ComputeWageForAll()
+        {
+            for(int i = 0; i < _numberOfCompanies; i++)
+            {
+                CalculateMonthlyWage(companyWageArray[i]);
+                Console.WriteLine(companyWageArray[i].ToString());
+            }
+        }
+        public void CalculateMonthlyWage(CompanyEmployeeWage companyEmployeeWage)
+        {
+            
 
             var wageHour = 0;
             var totalHours = 0;
             var totalWorkingDays = 0;
-            while (totalHours <= _maxHoursPerMonth && totalWorkingDays <= _workingDays)
+            var totalEmployeeWage = 0;
+            while (totalHours <= companyEmployeeWage.maxHoursPerMonth && totalWorkingDays <= companyEmployeeWage.workingDays)
             {
                 totalWorkingDays++;
                 var empCheck = new Random().Next(0, 3);
@@ -48,14 +58,12 @@ namespace EmployeesWageProgram
                 }
                 totalHours += wageHour;
             }
-            _totalEmployeeWage = totalHours * _wagePerHour;
-            Console.WriteLine("Total Employee Wage for " + _companyName + " is " + _totalEmployeeWage);
+            totalEmployeeWage = totalHours * companyEmployeeWage.wagePerHour;
+            companyEmployeeWage.totalEmployeeWage = totalEmployeeWage;
+            //Console.WriteLine("Total Employee Wage for " + companyEmployeeWage.companyName + " is " + totalEmployeeWage);
         }
 
-        public override string ToString()
-        {
-            return "Total Employee Wage for " + _companyName + " is " + _totalEmployeeWage;
-        }
+        
 
 
     }
