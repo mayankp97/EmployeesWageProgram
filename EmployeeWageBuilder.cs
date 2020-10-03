@@ -4,14 +4,15 @@ using System.Text;
 
 namespace EmployeesWageProgram
 {
-    class EmployeeWageBuilder
+
+    class EmployeeWageBuilder : IEmployeeWageBuilder
     {
         public const int IS_Part_Time = 1;
         public const int IS_Full_Time = 2;
 
         private int _numberOfCompanies = 0;
         public CompanyEmployeeWage[] companyWageArray;
-        
+
 
         public EmployeeWageBuilder()
         {
@@ -26,7 +27,7 @@ namespace EmployeesWageProgram
 
         public void ComputeWageForAll()
         {
-            for(int i = 0; i < _numberOfCompanies; i++)
+            for (int i = 0; i < _numberOfCompanies; i++)
             {
                 CalculateMonthlyWage(companyWageArray[i]);
                 Console.WriteLine(companyWageArray[i].ToString());
@@ -34,7 +35,7 @@ namespace EmployeesWageProgram
         }
         public void CalculateMonthlyWage(CompanyEmployeeWage companyEmployeeWage)
         {
-            
+
 
             var wageHour = 0;
             var totalHours = 0;
@@ -63,7 +64,7 @@ namespace EmployeesWageProgram
             //Console.WriteLine("Total Employee Wage for " + companyEmployeeWage.companyName + " is " + totalEmployeeWage);
         }
 
-        
+
 
 
     }
