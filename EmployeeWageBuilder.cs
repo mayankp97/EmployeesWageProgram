@@ -14,11 +14,13 @@ namespace EmployeesWageProgram
 
         private int _numberOfCompanies = 0;
         public ArrayList companyWageArray;
+        public Dictionary<string, int> companyWageMap;
 
 
         public EmployeeWageBuilder()
         {
-            this.companyWageArray = new ArrayList();
+            companyWageArray = new ArrayList();
+            companyWageMap = new Dictionary<string, int>();
         }
 
         public void AddWageDetails(string companyName, int wagePerHour, int workingDays, int maxHoursPerMonth)
@@ -31,8 +33,10 @@ namespace EmployeesWageProgram
         {
             for (int i = 0; i < _numberOfCompanies; i++)
             {
-                CalculateMonthlyWage((CompanyEmployeeWage)companyWageArray[i]);
-                Console.WriteLine(companyWageArray[i].ToString());
+                var company = (CompanyEmployeeWage)companyWageArray[i];
+                CalculateMonthlyWage(company);
+                companyWageMap.Add(company.companyName, company.totalEmployeeWage);
+                //Console.WriteLine(companyWageArray[i].ToString());
             }
         }
         public void CalculateMonthlyWage(CompanyEmployeeWage companyEmployeeWage)
