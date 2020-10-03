@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,18 +11,19 @@ namespace EmployeesWageProgram
         public const int IS_Part_Time = 1;
         public const int IS_Full_Time = 2;
 
+
         private int _numberOfCompanies = 0;
-        public CompanyEmployeeWage[] companyWageArray;
+        public ArrayList companyWageArray;
 
 
         public EmployeeWageBuilder()
         {
-            this.companyWageArray = new CompanyEmployeeWage[5];
+            this.companyWageArray = new ArrayList();
         }
 
         public void AddWageDetails(string companyName, int wagePerHour, int workingDays, int maxHoursPerMonth)
         {
-            this.companyWageArray[_numberOfCompanies] = new CompanyEmployeeWage(companyName, wagePerHour, workingDays, maxHoursPerMonth);
+            companyWageArray.Add(new CompanyEmployeeWage(companyName, wagePerHour, workingDays, maxHoursPerMonth));
             _numberOfCompanies++;
         }
 
@@ -29,7 +31,7 @@ namespace EmployeesWageProgram
         {
             for (int i = 0; i < _numberOfCompanies; i++)
             {
-                CalculateMonthlyWage(companyWageArray[i]);
+                CalculateMonthlyWage((CompanyEmployeeWage)companyWageArray[i]);
                 Console.WriteLine(companyWageArray[i].ToString());
             }
         }
